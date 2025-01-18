@@ -7,3 +7,11 @@
 ## When to creat new components
 
 ![When to creat new components](when-to-create-a-new-components.png)
+
+## General components guideline
+
+![ General components guideline](general-components-guideline.png)
+
+## Different Size and Reusability
+
+![ Different Size and Reusability](differentSize-and-Reusability.png)
