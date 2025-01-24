@@ -18,4 +18,4 @@
 
 ## What is component Composition
 
-![what is co composition ](what is composition.png)
+![what is composition](what-is-composition.png)
