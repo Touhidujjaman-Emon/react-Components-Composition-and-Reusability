@@ -15,3 +15,7 @@
 ## Different Size and Reusability
 
 ![ Different Size and Reusability](differentSize-and-Reusability.png)
+
+## What is component Composition
+
+![what is co composition ](what is composition.png)
