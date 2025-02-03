@@ -16,6 +16,7 @@ export default function StarRating({
   size = 48,
   className = "",
   message = [],
+  handleMovieRating,
 }) {
   const textStyle = {
     lineHeight: "1",
@@ -29,6 +30,7 @@ export default function StarRating({
 
   function handleRating(rating) {
     setRating(rating);
+    handleMovieRating(rating);
   }
   return (
     <div style={container} className={className}>
