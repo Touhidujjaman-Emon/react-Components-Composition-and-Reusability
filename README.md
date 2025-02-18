@@ -19,3 +19,7 @@
 ## What is component Composition
 
 ![what is composition](what-is-composition.png)
+
+## Component lifecycle
+
+![alt text](component-lifeCycle.png)
