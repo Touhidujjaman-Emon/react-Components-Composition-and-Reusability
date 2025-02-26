@@ -55,14 +55,17 @@ const KEY = "e3140ec7";
 export default function App() {
   const [movies, setMovies] = useState([]);
   const [watched, setWatched] = useState([]);
+  const [isLoading, setIsLoading] = useState(false);
 
   useEffect(function () {
     async function fetchData() {
+      setIsLoading(true);
       const response = await fetch(
         `https://www.omdbapi.com/?s=batman&apikey=${KEY}`
       );
       const data = await response.json();
       setMovies(data.Search);
+      setIsLoading(false);
     }
     fetchData();
   }, []);
@@ -75,9 +78,7 @@ export default function App() {
       </NavBar>
 
       <Main>
-        <Box>
-          <MovieList movies={movies} />
-        </Box>
+        <Box>{isLoading ? <Loader /> : <MovieList movies={movies} />}</Box>
 
         <Box>
           <WatchedSummary watched={watched} />
@@ -86,6 +87,10 @@ export default function App() {
       </Main>
     </>
   );
+}
+
+function Loader() {
+  return <p className="loader">Loading...</p>;
 }
 
 function NavBar({ children }) {
