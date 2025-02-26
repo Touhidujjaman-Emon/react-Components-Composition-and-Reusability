@@ -23,3 +23,7 @@
 ## Component lifecycle
 
 ![alt text](component-lifeCycle.png)
+
+## Event handler vs effect
+
+![alt text](eventHandler-vs-effect.png)
