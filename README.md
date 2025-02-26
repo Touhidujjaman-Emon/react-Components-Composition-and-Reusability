@@ -20,6 +20,8 @@
 
 ![what is composition](what-is-composition.png)
 
+# Effect and Data Fetching
+
 ## Component lifecycle
 
 ![alt text](component-lifeCycle.png)
