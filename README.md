@@ -29,3 +29,19 @@
 ## Event handler vs effect
 
 ![alt text](eventHandler-vs-effect.png)
+
+## Dependency array
+
+![alt text](dependency-array.png)
+
+## useEffects synchronize mechanism
+
+![alt text](use-effect-synchronize-mechanism.png)
+
+## Synchronization and lifeCycle
+
+![alt text](synchronization-and-lifeCycle.png)
+
+## When Effect are executed
+
+![alt text](when-are-effect-executed.png)
