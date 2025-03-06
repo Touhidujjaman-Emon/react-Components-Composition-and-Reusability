@@ -45,3 +45,23 @@
 ## When Effect are executed
 
 ![alt text](when-are-effect-executed.png)
+
+## Effect synchronization
+
+```js
+useEffect(function () {
+  console.log("initial render");
+}, []);
+
+useEffect(function () {
+  console.log("after every render");
+});
+
+useEffect(
+  function () {
+    console.log("syncrhonized with query (prop/state)");
+  },
+  [query]
+);
+``;
+```

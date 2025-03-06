@@ -1,3 +1,4 @@
+import { render } from "@testing-library/react";
 import { useEffect, useState } from "react";
 
 const tempMovieData = [
@@ -57,37 +58,44 @@ export default function App() {
   const [watched, setWatched] = useState([]);
   const [isLoading, setIsLoading] = useState(false);
   const [error, setError] = useState("");
-  const query = "eduyeu";
+  const [query, setQuery] = useState("interstellar");
 
-  useEffect(function () {
-    async function fetchData() {
-      try {
-        setIsLoading(true);
+  useEffect(
+    function () {
+      async function fetchData() {
+        try {
+          setIsLoading(true);
+          setError("");
+          const response = await fetch(
+            `https://www.omdbapi.com/?s=${query}&apikey=${KEY}`
+          );
 
-        const response = await fetch(
-          `https://www.omdbapi.com/?s=${query}&apikey=${KEY}`
-        );
+          if (!response.ok) throw new Error("Error fetching movies");
 
-        if (!response.ok) throw new Error("Error fetching movies");
+          const data = await response.json();
 
-        const data = await response.json();
-
-        if (data.Response === "False") throw new Error("Movie not found");
-        setMovies(data.Search);
-      } catch (error) {
-        console.error(error.message);
-        setError(error.message);
-      } finally {
-        setIsLoading(false);
+          if (data.Response === "False") throw new Error("Movie not found");
+          setMovies(data.Search);
+        } catch (error) {
+          setError(error.message);
+        } finally {
+          setIsLoading(false);
+        }
       }
-    }
-    fetchData();
-  }, []);
+      if (query.length < 2) {
+        setMovies([]);
+        setError("");
+        return;
+      }
+      fetchData();
+    },
+    [query]
+  );
 
   return (
     <>
       <NavBar>
-        <Search />
+        <Search query={query} setQuery={setQuery} />
         <NumResults movies={movies} />
       </NavBar>
 
@@ -139,8 +147,7 @@ function Logo() {
   );
 }
 
-function Search() {
-  const [query, setQuery] = useState("");
+function Search({ query, setQuery }) {
   return (
     <input
       className="search"
