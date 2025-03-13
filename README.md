@@ -65,3 +65,7 @@ useEffect(
 );
 ``;
 ```
+
+## useEffect CleanUp function
+
+![alt text](use-Effect-clean-up-fn.png)
