@@ -98,6 +98,7 @@ export default function App() {
 
         return;
       }
+      handleCloseMovie();
       fetchData();
 
       return function () {
@@ -214,6 +215,20 @@ function MovieDetails({ selectedId, onCloseMovie, onAddWatched, watched }) {
       getMovieDetails();
     },
     [selectedId]
+  );
+
+  useEffect(
+    function () {
+      function callback(e) {
+        if (e.key === "Escape") onCloseMovie();
+      }
+      document.addEventListener("keydown", callback);
+
+      return function () {
+        document.removeEventListener("keydown", callback);
+      };
+    },
+    [onCloseMovie]
   );
 
   function handleAdd() {
