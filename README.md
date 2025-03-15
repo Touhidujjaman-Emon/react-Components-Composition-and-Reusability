@@ -118,3 +118,20 @@ useEffect(
   [query]
 );
 ```
+
+# Hooks
+
+![alt text](react-hooks.png)
+
+## All built in hooks
+
+![alt text](all-buitIn-hooks.png)
+
+## Rules of react hooks
+
+![alt text](rules-of-react-hooks.png)
+
+### Hooks relay on call order
+
+![alt text](hooks-relay-callorder.png)
+![alt text](hooks-relay-correctOrder.png)
