@@ -179,3 +179,18 @@ return (
   />
 );
 ```
+
+### useRef to persist data between renders
+
+- Do not trigger re-render
+- Persist data between renders
+- Mutable
+
+```js
+useEffect(
+  function () {
+    if (userRating) countRef.current = countRef.current + 1;
+  },
+  [userRating]
+);
+```
