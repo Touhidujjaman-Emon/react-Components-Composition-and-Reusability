@@ -194,3 +194,7 @@ useEffect(
   [userRating]
 );
 ```
+
+# Custome hooks
+
+![alt text](custome-hooks.png)
